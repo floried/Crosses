@@ -3,18 +3,18 @@
   no_scroll {
     layers = <2>;
     input-processors 
-      = <&zip_xy_scaler 1 4> 
-	  // <&zip_xy_to_scroll_mapper>
-      // <&zip_scroll_scaler 4 1>
+      = <&zip_xy_scaler 1 8> 
+	  , <&zip_xy_to_scroll_mapper>
+      , <&zip_scroll_scaler 4 1>
       , <&zip_ble_report_rate_limit>
-	  //, <&zip_scroll_snap>              //  snap to a direction for macos
+	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
   };
   snap_scrolling {
 	layers = <3>;
     input-processors
       = <&zip_xy_to_scroll_mapper>
-      , <&zip_scroll_scaler 1 4>
+      , <&zip_scroll_scaler 1 6>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
@@ -44,7 +44,7 @@
    	slow_pointer: slow_pointer{
 	    layers = <3>;
 	    input-processors =
-	        <&zip_xy_scaler 1 4> //1 4
+	        <&zip_xy_scaler 1 6> //1 6 
 		//,	<&zip_xy_to_scroll_mapper>	      
 		//, <&zip_ble_report_rate_limit>
 		;

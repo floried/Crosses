@@ -388,11 +388,6 @@
             key-positions = <22 20>;
         };
 
-        ae {
-            bindings = <&as SQT SQT>;
-            key-positions = <21 22>;
-        };
-
         backspace_combo {
             bindings = <&kp BSPC>;
             key-positions = <40 41>;
