@@ -3,8 +3,7 @@
   no_scroll {
     layers = <2>;
     input-processors 
-      = <&zip_xy_scaler 1 8> 
-	  , <&zip_xy_to_scroll_mapper>
+      = <&zip_xy_to_scroll_mapper>
       , <&zip_scroll_scaler 4 1>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
@@ -28,8 +27,6 @@
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
   };
-
-
   	normal_scroll {
     layers = <0 1 4 6>;  /* list every layer where mouse should work */
     input-processors = <&zip_ble_report_rate_limit>;
@@ -50,6 +47,16 @@
 		;
 	  };
 
+	mouse_scroller: mouse_scroller{
+	    layers = <2>;
+	    input-processors =
+	    //    <&zip_xy_scaler 1 6> //1 6 
+			<&zip_xy_to_scroll_mapper>	      
+		, <&zip_ble_report_rate_limit>
+		, <&zip_scroll_snap>              //  snap to a direction for macos
+		;
+	  };
+
     sniper_pointer: sniper_pointer {
 			layers           = <4 5>;
 			input-processors =
@@ -61,15 +68,10 @@
 		};
 	normal_pointer: normal_pointer {
 			layers           = <0 1>;
-			input-processors = <&zip_xy_scaler 1 1>;
+			input-processors = 
+				<&zip_xy_scaler 1 1>
+			, 	<&zip_ble_report_rate_limit>
+			;
 		};
 
-	scroller_r: scroller_r {
-		layers           = <2>;
-		input-processors 
-			= <&zip_xy_scaler 1 4>
-			, <&zip_xy_to_scroll_mapper>      // Converts XY movement to scroll events 
-            , <&zip_scroll_snap>              //  snap to a direction for macos
-			;
-	};
 };
