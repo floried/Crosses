@@ -3,8 +3,8 @@
   no_scroll {
     layers = <2>;
     input-processors 
-      = <&zip_xy_to_scroll_mapper>
-      , <&zip_scroll_scaler 4 1>
+      //= <&zip_xy_to_scroll_mapper>
+      = <&zip_scroll_scaler 4 1>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
@@ -13,7 +13,7 @@
 	layers = <3>;
     input-processors
       = <&zip_xy_to_scroll_mapper>
-      , <&zip_scroll_scaler 1 6>
+      , <&zip_scroll_scaler 1 8>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
@@ -38,6 +38,16 @@
 &trackball_central_listener {
 	input-processors = <&zip_ble_report_rate_limit>;
 
+    sniper_pointer: sniper_pointer {
+		layers           = <4 5>;
+		input-processors =
+				<&zip_xy_scaler 1 15>           // Scales the scroll speed
+			//,<&zip_xy_to_scroll_mapper>      // Converts XY movement to scroll events 
+			//,<&zip_scroll_snap>              //  snap to a direction for macos
+			//,<&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)> // Inverts the scroll direction
+			;
+	};
+
    	slow_pointer: slow_pointer{
 	    layers = <3>;
 	    input-processors =
@@ -57,19 +67,10 @@
 		;
 	  };
 
-    sniper_pointer: sniper_pointer {
-			layers           = <4 5>;
-			input-processors =
-				  <&zip_xy_scaler 1 15>           // Scales the scroll speed
-			   //,<&zip_xy_to_scroll_mapper>      // Converts XY movement to scroll events 
-               //,<&zip_scroll_snap>              //  snap to a direction for macos
-			   //,<&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)> // Inverts the scroll direction
-				 ;
-		};
 	normal_pointer: normal_pointer {
 			layers           = <0 1>;
 			input-processors = 
-				<&zip_xy_scaler 1 1>
+				<&zip_xy_scaler 2 1>
 			, 	<&zip_ble_report_rate_limit>
 			;
 		};
