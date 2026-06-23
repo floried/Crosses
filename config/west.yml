@@ -1,6 +1,7 @@
 manifest:
   defaults:
     revision: main
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -8,6 +9,11 @@ manifest:
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: kot149
       url-base: https://github.com/kot149
+    - name: efogdev
+      url-base: https://github.com/efogdev
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,10 +22,15 @@ manifest:
     - name: gggw-zmk-keebs
       remote: Good-Great-Grand-Wonderful
       revision: 6b58c50
-      import: config/west.yml
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-pmw3610-driver
+      remote: efogdev
+      revision: a1a0f35ab6750c8fc72b84ea00add1e5fbaea1e4
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: a3510c9de46de8b42c803286f4978466c6ea3916
+
   self:
     path: config
-
