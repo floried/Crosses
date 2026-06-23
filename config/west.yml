@@ -22,7 +22,9 @@ manifest:
       revision: v1
     - name: zmk-report-rate-limit
       url: https://github.com/machetie/zmk-report-rate-limit
-      revision: main
+      revision: 06ba1e5
+      path: modules/zmk-report-rate-limit
+
 
   self:
     path: config
