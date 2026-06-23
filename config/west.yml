@@ -8,17 +8,23 @@ manifest:
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: kot149
       url-base: https://github.com/kot149
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: efogdev/main
+      revision: main
       import: app/west.yml
     - name: gggw-zmk-keebs
       remote: Good-Great-Grand-Wonderful
-      revision: zephyr-4.1
+      revision: main
       import: config/west.yml
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
   self:
     path: config
+
