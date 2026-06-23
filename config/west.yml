@@ -15,7 +15,7 @@ manifest:
       import: app/west.yml
     - name: gggw-zmk-keebs
       remote: Good-Great-Grand-Wonderful
-      revision: main
+      revision: zephyr-4.1
       import: config/west.yml
     - name: zmk-scroll-snap
       remote: kot149
