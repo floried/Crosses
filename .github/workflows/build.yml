@@ -28,4 +28,3 @@ jobs:
 
       - name: Build
         run: west build -s zmk/app -b nice_nano -- -DSHIELD=crosses_right
-``
