@@ -1,3 +1,5 @@
+#include "../../gggw-zmk-keebs/boards/shields/crosses/crosses.dtsi"
+
 &trackball_peripheral_listener {
   status = "okay";
   no_scroll {
