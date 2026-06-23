@@ -20,5 +20,9 @@ manifest:
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-report-rate-limit
+      url: https://github.com/machetie/zmk-report-rate-limit
+      revision: 06ba1e5
+
   self:
     path: config
