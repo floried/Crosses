@@ -1,6 +1,31 @@
 name: Build ZMK firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+
+      - name: Install west
+        run: pip install west
+
+      - name: Init west
+        run: west init -l config
+
+      - name: Update
+        run: west update
+
+      - name: Patch zmk-report-rate-limit
+        run: |
+          grep -rl zmk_endpoint_get_selected . | xargs sed -i 's/zmk_endpoint_get_selected/zmk_endpoints_selected/g'
+
+      - name: Build
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=crosses_right
+``
