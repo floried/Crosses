@@ -8,16 +8,14 @@ manifest:
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: kot149
       url-base: https://github.com/kot149
-    - name: badjeff
-      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: ac7f75b8591d39aaf3b66b9d26f26c9ed921a009
       import: app/west.yml
     - name: gggw-zmk-keebs
       remote: Good-Great-Grand-Wonderful
-      revision: main
+      revision: zephyr-4.1
       import: config/west.yml
     - name: zmk-scroll-snap
       remote: kot149
