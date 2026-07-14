@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: kot149
       url-base: https://github.com/kot149
+    - name: floried
+      url-base: https://github.com/floried
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,5 +22,8 @@ manifest:
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
+    - name: zmk-report-rate-limit
+      remote: floried
+      revision: main
   self:
     path: config
