@@ -1,9 +1,5 @@
 #include "../../gggw-zmk-keebs/boards/shields/crosses/crosses.dtsi"
 
-&trackball_peripheral {
-    status = "okay";
-    };
-
 &trackball_peripheral_split {
     device = <&trackball_peripheral>;
     input-processors
