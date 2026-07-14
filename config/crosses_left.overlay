@@ -2,8 +2,7 @@
 
 &trackball_peripheral {
     status = "okay";
-    compatible = "pixart,pmw3610";
-};
+    };
 
 &trackball_peripheral_split {
     device = <&trackball_peripheral>;
