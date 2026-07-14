@@ -21,4 +21,4 @@ manifest:
       remote: kot149
       revision: v1
   self:
-    path: config
+    path: config 
