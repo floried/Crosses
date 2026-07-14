@@ -2,20 +2,21 @@
 
 &trackball_peripheral_listener {
   status = "okay";
-  no_scroll {
+
     fast_scroll {
     layers = <5>;
     input-processors
-      = <&zip_xy_to_scroll_mapper>/
+      = <&zip_xy_to_scroll_mapper>
       , <&zip_scroll_scaler 4 1>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
   };
+    no_scroll {
     layers = <2>;
     input-processors 
-      = <&zip_xy_to_scroll_mapper>
-      , <&zip_scroll_scaler 4 1>
+      //= <&zip_xy_to_scroll_mapper>
+      = <&zip_scroll_scaler 4 1>
       , <&zip_ble_report_rate_limit>
 	  , <&zip_scroll_snap>              //  snap to a direction for macos
 	  ;
